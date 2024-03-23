@@ -1,0 +1,491 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-background {
+    background-color: darkblue;
+    /* Set your desired background color */
+}
+
+
+
+.header {
+    /* background-color: darkblue; */
+    background: linear-gradient(135deg, black 0%, darkblue 100%);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.logo-img {
+    width: 150px;
+    /* Adjust logo width as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+    /* Add animation on hover */
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+    /* Scale up on hover */
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.user-actions button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Adjust button styles */
+.login-btn {
+    background-color: #ff7f50;
+    /* Coral color */
+}
+
+.register-btn {
+    background-color: #ff7f50;
+    /* Steel blue color */
+}
+
+.login-btn:hover,
+.register-btn:hover {
+    background-color: #ff7f50;
+    /* Lighter coral color on hover */
+}
+
+
+
+.about-section {
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 50% 10%;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.about-description {
+    font-size: 18px;
+    color: #ff7f50;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.about-section::before {
+    content: "";
+    background-image: url('logo_with_bg-removebg-preview.png');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(6px);
+    opacity: 0.6;
+}
+
+.about-heading:hover+.about-description {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+/* 3 */
+.services-section {
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    /* Needed for pseudo elements */
+    overflow: hidden;
+    padding-top: 100px;
+    /* Add unit */
+    /* Hide overflowing animations */
+    /* background: linear-gradient(to bottom, white 0%, #1e90ff 100%); */
+    background: linear-gradient(135deg, black 0%, darkblue 100%);
+    /* Add semicolon */
+    /* Match background color with contact section */
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 50% 10%;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%
+}
+
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    /* Relative positioning for pseudo elements */
+    z-index: 1;
+    /* Ensure the cards are above the background animations */
+}
+
+.service-card {
+    width: 300px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px white(0, 0, 0, 0.1); */
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    /* Scale up on hover */
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    color: white;
+}
+
+.service-card p {
+    color: white;
+}
+
+.try-now-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.try-now-btn:hover {
+    background-color: #ff7f50;
+}
+
+/* Background animation */
+.services-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, black 0%, #1e90ff 100%);
+    z-index: -2;
+    /* Behind the cards and animations */
+}
+
+/* Custom animations on background */
+.services-section::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    /* Start above the section */
+    left: 50%;
+    /* Center horizontally */
+    width: 20px;
+    height: 20px;
+    background-color: #ff6347;
+    /* Color of moving element */
+    border-radius: 50%;
+    /* Round shape */
+    animation: moveBalls 2s linear infinite alternate;
+    /* Animation */
+    z-index: -1;
+    /* Behind the cards */
+}
+
+@keyframes moveBalls {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(150%);
+        /* Move down below the section */
+    }
+}
+
+/* Remove orange dots on card hover */
+.service-card:hover::before {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+
+
+
+
+
+
+
+.contact-section {
+    background: linear-gradient(135deg, black 0%, darkblue 100%);
+    color: White;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 50% 10%;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    background-color: linear-gradient(135deg, white 0%, darkblue 100%);
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: darkblue(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: black(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: darkblue;
+}
+
+/* Animation for background */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('1.jpg') repeat;
+    z-index: -1;
+    animation: animateBackground 10s linear infinite;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Extra animations */
+.contact-container {
+    animation: alternate-reverse 1s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-form input,
+.contact-form textarea {
+    animation: slideInLeft 1s ease;
+}
+
+.contact-form button {
+    animation: slideInRight 1s ease;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* #Contact us animation ended */
+
+
+.footer-section {
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 50% 10%;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%
+}
+
+/* .footer-section {
+    
+    background: linear-gradient(135deg, black 0%, darkblue 100%);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    border-top-left-radius: 50% 10%;
+    border-top-right-radius: 50% 10%;
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%
+} */
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-info p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff6347;
+}
+
+.footer-links {
+    flex: 1;
+}
+
+.footer-links h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ff6347;
+}
